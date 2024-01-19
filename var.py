@@ -1,6 +1,6 @@
-import random, os, subprocess, math, lan, itertools
+import math, itertools
 
-def cipher(text = "test", key = 1, direction = "right"):
+def ceaser_cipher(text = "test", key = 1, direction = "right"):
     #the math.fabs() finction get you the absolute value of a number for example -5 beomes 5
     #checking if the key doesn't exceeed 25
     if math.fabs(key) > 25:
@@ -52,22 +52,9 @@ def cipher(text = "test", key = 1, direction = "right"):
             #adding the the special character to the output
             output += letter
     return output
-        
-def brute_force(text):
-  list = []
-  for index in range(26):
-    output = cipher(text, index, "left")
-    success_percentage_english = lan.recognise_english(output)
-    success_percentage_french = lan.recognise_french(text)
-    #printing for fun
-    # print(output)
-    # print(success_percentage)
-    # print("\n")
-    if success_percentage_english >= 90 or success_percentage_french >= 90:
-      list.append((output, index))
-  return list
 
-def cipher2(text = "default", key="default", direction = "right"):
+
+def vineger_cipher(text = "default", key="default", direction = "right"):
     #to lower case characters
     text = text.lower()
     try:
@@ -114,28 +101,3 @@ def cipher2(text = "default", key="default", direction = "right"):
             #appending special character without ciphering them
             output += text_character
     return output
-  
-def brute_force2(text, lenght):
-    #alphabet list
-    alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    possible_solutions = []
-    # total_iterations = 26 ** lenght
-    count = 0
-    for i in range(1, lenght + 1):
-      count += 1
-      combinations = list(itertools.product(alphabet, repeat=i))
-      for combo in combinations:
-          # print(str((count * 100)/total_iterations) + " %")
-          combo = "".join(combo)
-          # print(combo)
-          output = cipher2(text, combo, "left")
-          if lan.recognise_english(output) > 90:
-            possible_solutions.append((output, combo))
-            print(output + "   " + combo + "\n")
-    return possible_solutions
-
-python_programs_dir = "D:\\Programming\\Python\\"
-websites_dir = "D:\\xampp\\htdocs\\adelweb\\"
-edge = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
-python_docs = "C://Users//Adel//AppData//Local//Programs//Python//Python312//Doc//html//index.html"
-alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
