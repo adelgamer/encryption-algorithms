@@ -1,4 +1,4 @@
-import math, itertools
+import math
 
 def ceaser_cipher(text = "test", key = 1, direction = "right"):
     #the math.fabs() finction get you the absolute value of a number for example -5 beomes 5
