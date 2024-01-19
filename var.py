@@ -94,7 +94,7 @@ def vineger_cipher(text = "default", key="default", direction = "right"):
             #determining index from alphabet list based on key_character
             index = alphabet.index(key_character)
             #ciphering character
-            ciphered_character = cipher(text_character, index, direction)
+            ciphered_character = ceaser_cipher(text_character, index, direction)
             #appending ciphered character to output
             output += ciphered_character
         else:
