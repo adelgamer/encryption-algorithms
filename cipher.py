@@ -2,7 +2,7 @@ import math
 
 class cipher:
   def ceaser_cipher(text = "test", key = 1, direction = "right"):
-      #the math.fabs() finction get you the absolute value of a number for example -5 beomes 5
+      #the math.fabs() functon get you the absolute value of a number for example -5 beomes 5
       #checking if the key doesn't exceeed 25
       if math.fabs(key) > 25:
           raise Exception(f"'{key}' is an invalid key, key must be smaller than 25 or greater then -25")
